@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body
+{
+  font-family: 'Open Sans', 'sans-serif';
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0; 
+}
+.gridblok{
+    width: 100%; 
+    height: 100%;
+    display:grid;
+    grid-template-columns: 7fr repeat(5, 1fr) 3fr 5fr;
+grid-template-rows: 3fr repeat(6, 1fr) 3fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.vrijemeikona{
+    /*padding-right: 15px;*/
+    grid-area: 2 / 2 / 5 / 5;
+    align-self: center;
+    justify-self: center;
+    width: 128px;
+    height: 128px;
+}
+.temperatura{
+    grid-area: 2 / 5 / 3 / 8;
+    align-self:center;
+}
+.opisvremena{
+    grid-area: 3 / 5 / 4 / 8;
+    align-self:center;
+}
+.lokacija{
+    grid-area: 4 / 5 / 5 / 8;
+    align-self:center;
+}
+.tlikona{
+    grid-area: 5 / 2 / 6 / 3; 
+    width: 18px;
+    height: 22px;
+    align-self: center;
+    justify-self: end;
+    filter:invert(100);
+}
+.tlak{
+    padding-left: 8px;
+    grid-area: 5 / 3 / 6 / 5;
+}
+.vlgikona{
+    grid-area: 6 / 2 / 7 / 3;
+    padding-right: 1px;
+    width: 16px;
+    height: 20px;
+    align-self: center;
+    justify-self: end;
+    filter:invert(100);
+}
+.vlaga{
+    padding-left: 8px;
+    grid-area: 6 / 3 / 7 / 5;
+}
+.vjrikona{
+    padding-bottom: 6px;
+    padding-right: 1px;
+    width: 16px;
+    height: 16px;
+    grid-area: 7 / 2 / 8 / 3;
+    align-self:center;
+    justify-self:end;
+    filter: invert(100);
+}
+.vjetar{
+    padding-left: 8px;
+    grid-area: 7 / 3 / 8 / 5;
+}
