@@ -7,7 +7,7 @@ const locationElement = document.querySelector(".lokacija p");
 const pressureElement = document.querySelector(".tlak p")
 const humidityElement = document.querySelector(".vlaga p")
 const windElement = document.querySelector(".vjetar p");
-
+console.log("line10");
 weather.pressure = {
   unit: "hPa"
 }
@@ -16,6 +16,18 @@ weather.wind = {
 }
 weather.temperature = {
   unit : "celsius"
+}
+
+function showvrijeme(){
+  iconElement.innerHTML = `<img src="images/icons/${weather.iconId}.png"/>`;
+  tempElement.innerHTML = `${weather.temperature.value} °<span>C</span>`;
+  const opis = weather.description;
+  const opisVeliko = opis.charAt(0).toUpperCase() + opis.slice(1)
+  descElement.innerHTML = opisVeliko;
+  pressureElement.innerHTML = `${weather.pressure.value} <span> hPa</span>`;
+  humidityElement.innerHTML = `${weather.humidity} <span> %</span>`;
+  windElement.innerHTML = `${weather.wind.value}<span> km/h</span>`;
+  locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
 
 function getlatlong(){
@@ -31,19 +43,6 @@ if (navigator.geolocation) {
  else {
         console.log("Nije moguće dobiti geolokaciju");
     }
-}
-
-
-function showvrijeme(){
-  iconElement.innerHTML = `<img src="images/icons/${weather.iconId}.png"/>`;
-  tempElement.innerHTML = `${weather.temperature.value} °<span>C</span>`;
-  const opis = weather.description;
-  const opisVeliko = opis.charAt(0).toUpperCase() + opis.slice(1)
-  descElement.innerHTML = opisVeliko;
-  pressureElement.innerHTML = `${weather.pressure.value} <span> hPa</span>`;
-  humidityElement.innerHTML = `${weather.humidity} <span> %</span>`;
-  windElement.innerHTML = `${weather.wind.value}<span> km/h</span>`;
-  locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
 
 getlatlong()
@@ -68,6 +67,7 @@ getlatlong()
   })
   .then(function(){
     showvrijeme();
+    console.log("dela!");
   });
 })
 
