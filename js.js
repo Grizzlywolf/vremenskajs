@@ -7,7 +7,7 @@ const locationElement = document.querySelector(".lokacija p");
 const pressureElement = document.querySelector(".tlak p")
 const humidityElement = document.querySelector(".vlaga p")
 const windElement = document.querySelector(".vjetar p");
-console.log("line10");
+
 weather.pressure = {
   unit: "hPa"
 }
